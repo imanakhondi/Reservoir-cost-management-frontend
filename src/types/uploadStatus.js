@@ -1,0 +1,6 @@
+export const UPLOAD_STATUS = {
+  NOT_UPLOADED: 0,
+  UPLOADING: 1,
+  UPLOADED_OK: 2,
+  UPLOADED_ERROR: 3,
+};

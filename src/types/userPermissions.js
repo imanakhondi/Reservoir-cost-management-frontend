@@ -1,0 +1,16 @@
+export const USER_PERMISSIONS = {
+  postSend: "post_send",
+  postSendAnonymous: "post_send_anonymous",
+  postAttachImage: "post_attach_image",
+  postAttachFile: "post_attach_file",
+  postQuote: "post_quote",
+  commentSend: "comment_send",
+  commentSendAnonymous: "comment_send_anonymous",
+  commentAttachImage: "comment_attach_image",
+  commentAttachFile: "comment_attach_file",
+  chatUse: "chat_use",
+  chatUsePrivate: "chat_use_private",
+  chatCreateGroup: "chat_create_group",
+  pollCreate: "poll_create",
+  kudosSend: "kudos_send",
+};
