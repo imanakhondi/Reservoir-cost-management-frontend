@@ -3,7 +3,6 @@ import React from "react";
 import {
   ModalAddUserPrompt,
   AuthLayout,
-  InputCheckbox,
   InputSelect,
   InputText,
   ButtonPrimary,
@@ -12,12 +11,11 @@ import { useAddUserPageService } from "../../hooks";
 import Svg, { SvgPath } from "../../../../components/svg";
 import { Link } from "react-router-dom";
 import utils from "../../../../utils";
-import { USER_PERMISSIONS, USER_TYPES } from "../../../../types";
+import { USER_TYPES } from "../../../../types";
 import userTypes from "../../../../types/options/userTypes";
 
 const AddUser = () => {
   const service = useAddUserPageService();
-  const { permissions } = utils.getLSLocale();
 
   return (
     <AuthLayout>
@@ -52,7 +50,7 @@ const AddUser = () => {
           </h2>
           <div className="grid grid-cols-3 gap-4">
             <InputText field="email" />
-           
+
             <div></div>
           </div>
         </div>

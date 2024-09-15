@@ -34,7 +34,7 @@ export const pagination = {
 
 export const header = {
   title: "پنل مدیریت سپنتاترابر",
-  subtitle: "سازمان شما:",
+  subtitle: "نقش شما:",
   account: "حساب کاربری",
   logout: "خروج کاربری",
 };
@@ -240,6 +240,29 @@ export const addUserPage = {
   btnAdd: "ایجاد کاربر",
 };
 
+export const editUserPage = {
+  _title: "ویرایش کردن سریع کاربر",
+  header1: "ورودی‌های ضروری",
+  mobile: "شماره موبایل",
+  mobilePlaceholder: "شماره موبایل کاربر را وارد کنید",
+  nameFamily: "نام و نام‌خانوادگی",
+  nameFamilyPlaceholder: "نام و نام‌خانوادگی کاربر را وارد کنید",
+  username: "نام کاربری",
+  usernamePlaceholder: "نام کاربری کاربر را وارد کنید",
+  header2: "دسترسی‌ها (ضروری)",
+  postPermissions: "دسترسی‌های پست",
+  commentPermissions: "دسترسی‌های کامنت",
+  chatPermissions: "دسترسی‌های چت",
+  otherPermissions: "سایر دسترسی‌ها",
+  selectAll: "انتخاب همه",
+  header3: "ورودی‌های اختیاری",
+  email: "ایمیل",
+  emailPlaceholder: "ایمیل کاربر را وارد کنید",
+  type: "نوع کاربر",
+  typePlaceholder: "نوع کاربر را انتخاب کنید",
+  btnAdd: "ویرایش کاربر",
+};
+
 export const addUsersGroupPage = {
   _title: "اضافه کردن گروهی کاربران",
   notUploadedHeader: "آپلود فایل CSV",
@@ -339,6 +362,39 @@ export const addTankPage = {
   btnAdd: "ایجاد مخزن",
 };
 
+export const editTankPage = {
+  _title: "اضافه کردن سریع مخزن",
+  header1: "ورودی‌های ضروری",
+  tankNo: "شماره مخزن",
+  tankNoPlaceholder: "شماره مخزن را وارد کنید",
+  tankOwner: "صاحب مخزن",
+  tankOwnerPlaceholder: "صاحب مخزن را وارد کنید",
+  oilTestExpiryDate: "انقضا تست شرکت نفت",
+  oilTestExpiryDatePlaceholder: "انقضا تست شرکت نفت را وارد کنید",
+  rahaneTestExpiryDate: "انقضا تست رهانه",
+  rahaneTestExpiryDatePlaceholder: "انقضا تست رهانه را وارد کنید",
+  capotageExpiryDate: "انقضا کاپوتاژ",
+  capotageExpiryDatePlaceholder: "انقضا کاپوتاژ را وارد کنید",
+  mobile: "شماره موبایل",
+  mobilePlaceholder: "شماره موبایل کاربر را وارد کنید",
+  nameFamily: "نام و نام‌خانوادگی",
+  nameFamilyPlaceholder: "نام و نام‌خانوادگی کاربر را وارد کنید",
+  username: "نام کاربری",
+  usernamePlaceholder: "نام کاربری کاربر را وارد کنید",
+  header2: "دسترسی‌ها (ضروری)",
+  postPermissions: "دسترسی‌های پست",
+  commentPermissions: "دسترسی‌های کامنت",
+  chatPermissions: "دسترسی‌های چت",
+  otherPermissions: "سایر دسترسی‌ها",
+  selectAll: "انتخاب همه",
+  header3: "ورودی‌های اختیاری",
+  email: "ایمیل",
+  emailPlaceholder: "ایمیل کاربر را وارد کنید",
+  type: "نوع مخزن",
+  typePlaceholder: "نوع کاربر را انتخاب کنید",
+  btnAdd: "ویرایش مخزن",
+};
+
 export const servicesPage = {
   _title: "مدیریت خدمات",
   btnAdd: "افزودن خدمات",
@@ -408,6 +464,33 @@ export const addServicePage = {
   type: "نوع خدمات",
   typePlaceholder: "نوع خدمات را انتخاب کنید",
   btnAdd: "ایجاد خدمات",
+};
+
+export const editServicePage = {
+  _title: "اضافه کردن سریع خدمات",
+  header1: "ورودی‌های ضروری",
+  serviceName: "نام خدمات",
+  serviceNamePlaceholder: "نام خدمات را وارد کنید",
+  serviceDescription: "توضیحات",
+  serviceDescriptionPlaceholder: "توضیحات را وارد کنید",
+  mobile: "شماره موبایل",
+  mobilePlaceholder: "شماره موبایل کاربر را وارد کنید",
+  nameFamily: "نام و نام‌خانوادگی",
+  nameFamilyPlaceholder: "نام و نام‌خانوادگی کاربر را وارد کنید",
+  username: "نام کاربری",
+  usernamePlaceholder: "نام کاربری کاربر را وارد کنید",
+  header2: "دسترسی‌ها (ضروری)",
+  postPermissions: "دسترسی‌های پست",
+  commentPermissions: "دسترسی‌های کامنت",
+  chatPermissions: "دسترسی‌های چت",
+  otherPermissions: "سایر دسترسی‌ها",
+  selectAll: "انتخاب همه",
+  header3: "ورودی‌های اختیاری",
+  email: "ایمیل",
+  emailPlaceholder: "ایمیل کاربر را وارد کنید",
+  type: "نوع خدمات",
+  typePlaceholder: "نوع خدمات را انتخاب کنید",
+  btnAdd: "ویرایش خدمات",
 };
 
 export const costsPage = {
@@ -561,5 +644,5 @@ export const editCostPage = {
   emailPlaceholder: "ایمیل کاربر را وارد کنید",
   serviceType: "نوع خدمات",
   serviceTypePlaceholder: "نوع خدمات را انتخاب کنید",
-  btnAdd: "ثبت هزینه",
+  btnAdd: "ویرایش هزینه",
 };

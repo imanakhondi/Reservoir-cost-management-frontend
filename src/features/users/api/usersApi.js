@@ -19,11 +19,31 @@ export const add = async (
   });
 };
 
-export const addGroup = async (csvFile) => {
-  let data = new FormData();
-  data.append("csv_file", csvFile);
+export const edit = async (
+  id,
+  mobile,
+  name,
+  username,
+  permissions,
+  email,
+  userType
+) => {
+  return await post(`${ENV.apiEndpoint}/users/edit/${id}`, {
+    mobile,
+    name,
+    username,
+    permissions,
+    email,
+    type: userType,
+  });
+};
 
-  return await postFile(`${ENV.apiEndpoint}/users/store/group`, data);
+export const deleteUser  = async (id) => { 
+  return await post(`${ENV.apiEndpoint}/users/delete/${id}`);
+};
+
+export const getUserById  = async (id) => { 
+  return await post(`${ENV.apiEndpoint}/users/${id}`);
 };
 
 export const search = async (

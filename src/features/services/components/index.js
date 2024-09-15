@@ -1,4 +1,5 @@
 import ManageServicesPage from "./ManageServicesPage/ManageServicesPage";
-import AddService from "./AddServices/AddService";
+import AddService from "./AddService/AddService";
+import EditService from "./EditService/EditService";
 
-export { ManageServicesPage, AddService };
+export { ManageServicesPage, AddService, EditService };

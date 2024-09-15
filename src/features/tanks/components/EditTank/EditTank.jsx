@@ -2,22 +2,37 @@ import React from "react";
 
 import {
   AuthLayout,
+  InputText,
   ButtonPrimary,
+  InputDatePicker,
   InputSelect,
-  InputFile,
 } from "../../../../components";
-import {  useEditCostPageService } from "../../hooks";
+import { useEditTankPageService } from "../../hooks";
 import Svg, { SvgPath } from "../../../../components/svg";
 import { Link } from "react-router-dom";
-import utils from "../../../../utils";
-import InputTextarea from "../../../../components/form/InputTextarea";
 
 
-const EditCost = () => {
-  const service = useEditCostPageService();
- 
+const tankOwnerOptions = [
+  {
+    value: "James",
+    text: "James D",
+  },
+  {
+    value: "Mary",
+    text: "Mary A",
+  },
+  {
+    value: "John",
+    text: "John K",
+  },
+];
+
+const EditTank = () => {
+  const service = useEditTankPageService();
+
   return (
     <AuthLayout>
+      {/* <ModalAddUserPrompt onAddNextUser={service.onAddNextUser} /> */}
       <div className="p-3">
         <div className="flex flex-row justify-start items-center gap-2 h-12 mb-2">
           <Link to={`/tanks`}>
@@ -33,46 +48,42 @@ const EditCost = () => {
         <div className="bg-white rounded section-body p-4">
           <h2 className="text-primary font-bold">{service.strings.header1}</h2>
           <div className="grid grid-cols-3 gap-4">
-            <InputSelect
-              field="tankOwner"
-              options={service.tankOwnerOptions}
-              defaultValue={service.formData.tankOwner}
-              onChange={(e) => service.handleTankOwnerChange(e.target.value)}
-              required
-            />
-            <InputSelect
+            <InputText
               field="tankNo"
-              options={service.tankNoList}
               defaultValue={service.formData.tankNo}
               required
             />
             <InputSelect
-              field="serviceType"
-              options={service.costType}
-              defaultValue={service.formData.serviceType}
+              field="tankOwner"
+              options={tankOwnerOptions}
+              defaultValue={service.formData.tankOwner}
+              required
+            />
+            <InputDatePicker
+              field="oilTestExpiryDate"
+              defaultValue={service.formData.oilTestExpiryDate}
+              required
+            />
+            <InputDatePicker
+              field="rahaneTestExpiryDate"
+              defaultValue={service.formData.rahaneTestExpiryDate}
               required
             />
           </div>
-
           <h2 className="text-primary font-bold mt-6">
             {service.strings.header3}
           </h2>
           <div className="grid grid-cols-3 gap-4">
-            <InputFile field="uploadDoc" />
-          </div>
-          <div className="">
-            <InputTextarea
-              field="costDescription"
-              defaultValue={service.formData.costDescription}
+            <InputDatePicker
+              field="capotageExpiryDate"
+              defaultValue={service.formData.capotageExpiryDate}
             />
           </div>
         </div>
         <div className="flex flex-row justify-end mt-4">
           <ButtonPrimary
             label="btnAdd"
-            onClick={() =>
-              service.handleSubmit((data) => service.onSubmit(service.id, data))
-            }
+            onClick={service.handleSubmit((data) => service.onSubmit(service.id, data))}
           />
         </div>
       </div>
@@ -80,4 +91,4 @@ const EditCost = () => {
   );
 };
 
-export default EditCost;
+export default EditTank;

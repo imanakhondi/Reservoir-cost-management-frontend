@@ -11,13 +11,12 @@ import { logoutAction } from "../../stores/admin/adminActions";
 
 const Sidebar = () => {
   const pageState = useSelector((state) => state.pageReducer);
+  const adminState = useSelector((state) => state.adminReducer);
   const dispatch = useDispatch();
   const { sidebar: strings } = utils.getLSLocale();
 
   useEffect(() => {
-    if (!pageState?.page) {
-      return;
-    }
+    if (!pageState?.page) return;
 
     const elements = document.querySelectorAll(".arrow-up");
 
@@ -143,13 +142,7 @@ const Sidebar = () => {
     return;
   }
 
-  const adminState = {
-    admin: true,
-    // operator: true,
-    // internalManager: true,
-  };
-
-  const renderAuthenticatedMenus = () => (
+  const renderAdminMenus = () => (
     <ul>
       {renderMenuItemLink(
         PAGES.Dashboard,
@@ -294,12 +287,64 @@ const Sidebar = () => {
     </ul>
   );
 
+  const renderFinancialMenus = () => (
+    <ul>
+      {renderMenuItemLink(
+        PAGES.Dashboard,
+        SvgPath.SvgDashboard,
+        strings.dashboard,
+        "/"
+      )}
+      {renderMenuItemDropdown(
+        [PAGES.Costs, PAGES.AddCost],
+        SvgPath.SvgWorkingGroup,
+        strings.costs
+      )}
+      <li className="sub-menu">
+        <ul>
+          {renderSubMenuItem(
+            [PAGES.Costs, PAGES.AddCost],
+            strings.costsManagement,
+            `/costs`
+          )}
+        </ul>
+      </li>
+    </ul>
+  );
+
+  const renderMerchantMenus = () => (
+    <ul>
+      {renderMenuItemLink(
+        PAGES.Dashboard,
+        SvgPath.SvgDashboard,
+        strings.dashboard,
+        "/"
+      )}
+      {renderMenuItemDropdown(
+        [PAGES.Costs, PAGES.AddCost],
+        SvgPath.SvgWorkingGroup,
+        strings.costs
+      )}
+      <li className="sub-menu">
+        <ul>
+          {renderSubMenuItem(
+            [PAGES.Costs, PAGES.AddCost],
+            strings.costsManagement,
+            `/costs`
+          )}
+        </ul>
+      </li>
+    </ul>
+  );
+
   return (
-    <div className="sidebar flex flex-col w-72 bg-white">
+    <div className="sidebar hidden md:flex flex-col w-72 bg-white">
       <div className="menu-container py-4 pr-0 pl-4 flex flex-col flex-1 justify-between max-h-screen">
-        {adminState?.admin && renderAuthenticatedMenus()}
+        {adminState?.admin && renderAdminMenus()}
         {adminState?.operator && renderOperatorMenus()}
         {adminState?.internalManager && renderInternalManagerMenus()}
+        {adminState?.financial && renderFinancialMenus()}
+        {adminState?.merchant && renderMerchantMenus()}
         <ul>
           {/* {renderMenuItemLink(
             null,

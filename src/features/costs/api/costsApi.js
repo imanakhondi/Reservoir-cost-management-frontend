@@ -71,7 +71,7 @@ export const update = async (
 };
 
 export const deleteCost  = async (id) => { 
-  return await post(`${ENV.apiEndpoint}/costs/${id}`);
+  return await post(`${ENV.apiEndpoint}/costs/delete/${id}`);
 };
 
 export const getCostById  = async (id) => { 

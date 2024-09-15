@@ -1,9 +1,9 @@
 import useUsersPageService from "./useUsersPageService";
 import useAddUserPageService from "./useAddUserPageService";
-import useAddUsersGroupPageService from "./useAddUsersGroupPageService";
+import useEditUserPageService from "./useEditUserPageService";
 
 export {
   useUsersPageService,
   useAddUserPageService,
-  useAddUsersGroupPageService,
+  useEditUserPageService
 };

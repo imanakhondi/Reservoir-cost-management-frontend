@@ -17,6 +17,33 @@ export const add = async (
   });
 };
 
+export const edit = async (
+  id,
+  tankOwner,
+  tankName,
+  oilTestExpiryDate,
+  rahaneTestExpiryDate,
+  capotageExpiryDate
+) => {
+  
+
+  return await postFile(`${ENV.apiEndpoint}/tanks/edit/${id}`, {
+    tankOwner,
+    tankName,
+    oilTestExpiryDate,
+    rahaneTestExpiryDate,
+    capotageExpiryDate,
+  });
+};
+
+export const deleteTank  = async (id) => { 
+  return await post(`${ENV.apiEndpoint}/tanks/delete/${id}`);
+};
+
+export const getTankById  = async (id) => { 
+  return await post(`${ENV.apiEndpoint}/tanks/${id}`);
+};
+
 export const search = async (tankOwner, tankName, pageNo, pageItems) => {
   return await post(`${ENV.apiEndpoint}/tanks`, {
     tankOwner,

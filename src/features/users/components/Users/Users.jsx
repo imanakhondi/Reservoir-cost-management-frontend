@@ -11,7 +11,6 @@ import {
   TableItems,
   ModalUsersFilter,
   ButtonViewSm,
-  InputSelectPagination,
   TablePagination,
 } from "../../../../components";
 import { useUsersPageService } from "../../hooks";
