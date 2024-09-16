@@ -188,7 +188,7 @@ export const usersPage = {
   username: "شناسه کاربری",
   mobile: "شماره موبایل",
   status: "وضعیت کاربر",
-  addUserQuick: "افزودن سریع کاربر",
+  addUserQuick: "افزودن کاربر",
   addUsersGroup: "افزودن گروهی کاربران",
   filterName: "نام و نام‌خانوادگی",
   filterNamePlaceholder: "نام و نام‌خانوادگی را جستجو کنید",
@@ -219,7 +219,7 @@ export const usersPage = {
 };
 
 export const addUserPage = {
-  _title: "اضافه کردن سریع کاربر",
+  _title: "اضافه کردن کاربر",
   header1: "ورودی‌های ضروری",
   mobile: "شماره موبایل",
   mobilePlaceholder: "شماره موبایل کاربر را وارد کنید",
@@ -242,7 +242,7 @@ export const addUserPage = {
 };
 
 export const editUserPage = {
-  _title: "ویرایش کردن سریع کاربر",
+  _title: "ویرایش کردن کاربر",
   header1: "ورودی‌های ضروری",
   mobile: "شماره موبایل",
   mobilePlaceholder: "شماره موبایل کاربر را وارد کنید",
@@ -300,7 +300,7 @@ export const tanksPage = {
   username: "شناسه کاربری",
   mobile: "شماره موبایل",
   status: "وضعیت مخزن",
-  addTankQuick: "افزودن سریع مخزن",
+  addTankQuick: "افزودن مخزن",
   addUsersGroup: "افزودن گروهی کاربران",
   filterTankNo: "شماره مخزن",
   filterTankNoPlaceholder: "شماره مخزن را جستجو کنید",
@@ -331,7 +331,7 @@ export const tanksPage = {
 };
 
 export const addTankPage = {
-  _title: "اضافه کردن سریع مخزن",
+  _title: "اضافه کردن مخزن",
   header1: "ورودی‌های ضروری",
   tankNo: "شماره مخزن",
   tankNoPlaceholder: "شماره مخزن را وارد کنید",
@@ -364,7 +364,7 @@ export const addTankPage = {
 };
 
 export const editTankPage = {
-  _title: "اضافه کردن سریع مخزن",
+  _title: "ویرایش کردن مخزن",
   header1: "ورودی‌های ضروری",
   tankNo: "شماره مخزن",
   tankNoPlaceholder: "شماره مخزن را وارد کنید",
@@ -410,7 +410,7 @@ export const servicesPage = {
   username: "شناسه کاربری",
   mobile: "شماره موبایل",
   status: "وضعیت خدمات",
-  addServiceQuick: "افزودن سریع خدمت",
+  addServiceQuick: "افزودن خدمت",
   addUsersGroup: "افزودن گروهی کاربران",
   filterServiceName: "نام خدمات",
   filterServiceNamePlaceholder: "نام خدمات را جستجو کنید",
@@ -441,7 +441,7 @@ export const servicesPage = {
 };
 
 export const addServicePage = {
-  _title: "اضافه کردن سریع خدمات",
+  _title: "اضافه کردن خدمات",
   header1: "ورودی‌های ضروری",
   serviceName: "نام خدمات",
   serviceNamePlaceholder: "نام خدمات را وارد کنید",
@@ -468,7 +468,7 @@ export const addServicePage = {
 };
 
 export const editServicePage = {
-  _title: "اضافه کردن سریع خدمات",
+  _title: "ویرایش کردن خدمات",
   header1: "ورودی‌های ضروری",
   serviceName: "نام خدمات",
   serviceNamePlaceholder: "نام خدمات را وارد کنید",
@@ -514,7 +514,7 @@ export const costsPage = {
   username: "شناسه کاربری",
   mobile: "شماره موبایل",
   status: "وضعیت هزینه",
-  addTankQuick: "افزودن سریع هزینه",
+  addTankQuick: "افزودن هزینه",
   addUsersGroup: "افزودن گروهی کاربران",
   filterCostName: "نام هزینه",
   filterCostNamePlaceholder: "نام هزینه را جستجو کنید",
@@ -547,7 +547,7 @@ export const costsPage = {
 };
 
 export const addCostPage = {
-  _title: "اضافه کردن سریع هزینه",
+  _title: "اضافه کردن هزینه",
   header1: "ورودی‌های ضروری",
   cost: "هزینه",
   costPlaceholder: "هزینه را وارد کنید",
@@ -581,7 +581,7 @@ export const addCostPage = {
 };
 
 export const updateCostPage = {
-  _title: "اضافه کردن سریع هزینه",
+  _title: "به روز رسانی هزینه",
   header1: "ورودی‌های ضروری",
   cost: "هزینه",
   costPlaceholder: "هزینه را وارد کنید",
@@ -615,7 +615,7 @@ export const updateCostPage = {
 };
 
 export const editCostPage = {
-  _title: "اضافه کردن سریع هزینه",
+  _title: "ویرایش کردن هزینه",
   header1: "ورودی‌های ضروری",
   cost: "هزینه",
   costPlaceholder: "هزینه را وارد کنید",

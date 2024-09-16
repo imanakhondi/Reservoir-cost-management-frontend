@@ -47,7 +47,7 @@ const AddTank = () => {
         </div>
         <div className="bg-white rounded section-body p-4">
           <h2 className="text-primary font-bold">{service.strings.header1}</h2>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             <InputText field="tankNo" required />
             <InputSelect field="tankOwner" options={tankOwner} required />
             <InputDatePicker field="oilTestExpiryDate" required />
@@ -56,7 +56,7 @@ const AddTank = () => {
           <h2 className="text-primary font-bold mt-6">
             {service.strings.header3}
           </h2>
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
             <InputDatePicker field="capotageExpiryDate" />
           </div>
         </div>

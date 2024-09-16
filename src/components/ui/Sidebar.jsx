@@ -6,6 +6,7 @@ import Svg, { SvgPath } from "../svg";
 import utils from "../../utils";
 import { PAGES } from "../../types";
 import { logoutAction } from "../../stores/admin/adminActions";
+import { setShownModalAction } from "../../stores/layout/layoutActions";
 
 const Sidebar = () => {
   const pageState = useSelector((state) => state.pageReducer);
@@ -20,6 +21,7 @@ const Sidebar = () => {
         className={`flex flex-row items-center gap-4 menu-item menu-link ${
           page === pageState?.page ? "selected" : ""
         }`}
+        onClick={()=>dispatch(setShownModalAction(null))}
       >
         <Svg
           SvgPath={<SvgComponent />}
@@ -157,20 +159,14 @@ const Sidebar = () => {
   );
 
   return (
-    <div className="sidebar hidden md:flex flex-col w-72 bg-white">
-      <div className="menu-container py-4 pr-0 pl-4 flex flex-col flex-1 justify-between max-h-screen">
+    <div className="sidebar hidden md:flex flex-col md:w-48 xl:w-72 bg-white">
+      <div className="menu-container py-4 pr-0 pl-4 flex flex-col flex-1 justify-between max-h-screen min-h-[calc(100vh_-_5rem)]">
         {adminState?.admin && renderAdminMenus()}
         {adminState?.operator && renderOperatorMenus()}
         {adminState?.internalManager && renderInternalManagerMenus()}
         {adminState?.financial && renderFinancialMenus()}
         {adminState?.merchant && renderMerchantMenus()}
         <ul>
-          {/* {renderMenuItemLink(
-            null,
-            SvgPath.SvgSettings,
-            strings.networkSettings,
-            "/"
-          )} */}
           <li
             className="flex flex-row items-center gap-4 menu-item last"
             onClick={logout}

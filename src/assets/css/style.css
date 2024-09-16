@@ -1,7 +1,7 @@
 :root {
   --white: #fff;
   --bg: #f8f8f8;
-  --primary: #443FA5;
+  --primary: #443fa5;
   --primary-light: #d6eefe;
   --success: #58b961;
   --success-light: rgba(88, 185, 97, 0.2);
@@ -13,7 +13,7 @@
   --disable: #b2b2b2;
   --border: #e1e1e1;
   --border-line: "#dedede";
-  --linear: linear-gradient(127.79deg, #443FA5 5.48%, #443FA5 91.97%);
+  --linear: linear-gradient(127.79deg, #443fa5 5.48%, #443fa5 91.97%);
   /* --linear: linear-gradient(127.79deg, #D81217 5.48%, #443FA5 91.97%); */
 }
 *,
@@ -211,6 +211,14 @@ option,
 }
 .sidebar .menu-container .sub-menu span {
   margin-right: -0.75rem;
+}
+
+#menu-modal .sidebar {
+  display: flex;
+}
+
+#menu-modal .sidebar {
+  box-shadow: none;
 }
 .logo {
   background-image: url("../images/logo.png");

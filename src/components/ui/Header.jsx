@@ -5,7 +5,13 @@ import utils from "../../utils";
 import Svg, { SvgPath } from "../svg";
 import { slideDown, slideUp } from "es6-slide-up-down";
 import { easeOutQuint } from "es6-easings";
-import { setDropDownElementAction } from "../../stores/layout/layoutActions";
+import {
+  setDropDownElementAction,
+  setShownModalAction,
+} from "../../stores/layout/layoutActions";
+import { useUsersPageService } from "../../features/users/hooks";
+import ButtonMenu from "../form/ButtonMenu";
+import ModalShowMenu from "../modal/ModalShowMenu";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -41,7 +47,11 @@ const Header = () => {
     <div className="header flex flex-row justify-center px-3 py-2 bg-white z-50">
       <div className="flex flex-row flex-1 gap-3">
         {/* <div className="logo w-12 h-12 bg-no-repeat bg-cover rounded-full"></div> */}
-        <div className="flex flex-col">
+        <ButtonMenu
+          onClick={() => dispatch(setShownModalAction("menu-modal"))}
+        />
+        <ModalShowMenu />
+        <div className="hidden md:flex flex-col">
           <h1 className="text-base leading-8">{strings.title}</h1>
           <span className="text-xs">{strings.subtitle}</span>
         </div>

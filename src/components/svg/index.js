@@ -13,6 +13,7 @@ import SvgDocument from "./SvgDocument";
 import SvgEdit from "./SvgEdit";
 import SvgFilter from "./SvgFilter";
 import SvgGroup from "./SvgGroup";
+import SvgHamburgerMenu from "./SvgHamburgerMenu";
 import SvgIcon404 from "./SvgIcon404";
 import SvgLogout from "./SvgLogout";
 import SvgMinus from "./SvgMinus";
@@ -61,6 +62,7 @@ const SvgPath = {
   SvgVerticalLine,
   SvgView,
   SvgWorkingGroup,
+  SvgHamburgerMenu
 };
 
 export default Svg;

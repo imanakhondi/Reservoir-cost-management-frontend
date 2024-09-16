@@ -32,7 +32,7 @@ const ManageCostsPage = () => {
       <th className="px-5 font-normal min-w-32">{service.strings.costDate}</th>
 
       {/* <th className="px-5 font-normal w-full">{service.strings.status}</th> */}
-      <th className="px-5 font-normal w-full">تائید / رد توسط تاجر</th>
+      <th className="px-5 font-normal min-w-40">تائید / رد توسط تاجر</th>
       <th className="px-5 min-w-12">&nbsp;</th>
     </tr>
   );
@@ -84,7 +84,7 @@ const ManageCostsPage = () => {
             />
           </div>
         </div>
-        <div className="bg-white rounded section-body">
+        <div className="bg-white rounded section-body overflow-auto">
           <TableItems
             items={service.data?.items}
             renderHeader={renderHeader}

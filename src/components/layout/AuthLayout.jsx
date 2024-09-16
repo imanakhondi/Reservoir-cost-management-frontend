@@ -8,7 +8,7 @@ const AuthLayout = ({ children }) => {
       <Header />
       <div className="flex flex-row flex-1">
         <Sidebar />
-        <div className="flex flex-col flex-1 p-4">
+        <div className="flex flex-col flex-1 p-4 overflow-hidden">
           <AlertState />
           {children}
         </div>
