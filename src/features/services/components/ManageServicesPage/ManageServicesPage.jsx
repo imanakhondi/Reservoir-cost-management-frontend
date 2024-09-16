@@ -1,23 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import {
   AuthLayout,
   ButtonAdd,
   ButtonEditSm,
   ButtonFilter,
-  LabelSuccess,
-  LabelWarning,
   TableItems,
   ButtonViewSm,
-  InputSelectPagination,
   TablePagination,
   ModalServicesFilter,
 } from "../../../../components";
 import { useServicesPageService } from "../../hooks";
-import Svg, { SvgPath } from "../../../../components/svg";
 import utils from "../../../../utils";
-import { pageItems } from "../../../../types/options";
 
 const ManageServicesPage = () => {
   const service = useServicesPageService();
@@ -57,9 +51,7 @@ const ManageServicesPage = () => {
 
   return (
     <AuthLayout>
-      <ModalServicesFilter
-        onSubmit={service.handleSubmit(service.onSubmit)}
-      />
+      <ModalServicesFilter onSubmit={service.handleSubmit(service.onSubmit)} />
       <div className="p-3">
         <div className="flex flex-row justify-between items-center h-12 mb-2">
           <h1 className="font-bold">{service.strings._title}</h1>
@@ -67,31 +59,8 @@ const ManageServicesPage = () => {
             <div id="add-user-menu" className="relative cursor-pointer">
               <ButtonAdd
                 label={service.strings.btnAdd}
-                onClick={service.toggleAddServiceDropdown}
+                onClick={service.addService}
               />
-              <div className="absolute hidden cursor-default overflow-hidden right-0 top-11 dropdown-menu-header rounded">
-                <div className="bg-white px-4 py-1 border border-border-line rounded-t">
-                  <Link
-                    className="flex flex-row items-center gap-2"
-                    to={`/services/add`}
-                  >
-                    <Svg
-                      SvgPath={
-                        <SvgPath.SvgCirclePlus
-                          pathClassName={"stroke-subline"}
-                        />
-                      }
-                      width="24"
-                      height="24"
-                      className="icon-complex"
-                      viewBox={"0 0 16 16"}
-                    />
-                    <span className="text-subline w-max text-sm">
-                      {service.strings.addServiceQuick}
-                    </span>
-                  </Link>
-                </div>
-              </div>
             </div>
             <ButtonFilter
               label={service.strings.btnFilter}

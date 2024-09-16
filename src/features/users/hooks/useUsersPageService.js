@@ -1,19 +1,15 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { slideDown, slideUp } from "es6-slide-up-down";
-import { easeOutQuint } from "es6-easings";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import utils from "../../../utils";
 import { usePage } from "../../../hooks";
 import { API_RESULT_CODES, PAGE_ITEMS, PAGES } from "../../../types";
-import {
-  setDropDownElementAction,
-  setShownModalAction,
-} from "../../../stores/layout/layoutActions";
+import { setShownModalAction } from "../../../stores/layout/layoutActions";
 import { filterUsersSchema as schema } from "../validations";
 import { search, searchWithProps } from "../api/usersApi";
+import { useNavigate } from "react-router-dom";
 
 const useUsersPageService = () => {
   const layoutState = useSelector((state) => state.layoutReducer);
@@ -26,6 +22,7 @@ const useUsersPageService = () => {
     count: 0,
   });
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const form = useForm({
     resolver: yupResolver(schema),
   });
@@ -46,25 +43,9 @@ const useUsersPageService = () => {
     }
   }, [pagination.pageNo, pagination.pageItems]);
 
-  const toggleAddUserDropdown = (e) => {
+  const addUser = (e) => {
     e.stopPropagation();
-    const element = document.querySelector("#add-user-menu").lastChild;
-
-    if (layoutState?.dropDownElement) {
-      slideUp(layoutState.dropDownElement);
-
-      if (layoutState?.dropDownElement === element) {
-        dispatch(setDropDownElementAction(null));
-
-        return;
-      }
-    }
-
-    dispatch(setDropDownElementAction(element));
-    slideDown(element, {
-      duration: 400,
-      easing: easeOutQuint,
-    });
+    navigate("/users/add");
   };
 
   const showModalFilter = () => {
@@ -92,8 +73,7 @@ const useUsersPageService = () => {
     };
   };
 
-  const onSubmit = async (data) => {    
-  
+  const onSubmit = async (data) => {
     handleSetBadge(data);
     dispatch(setShownModalAction(null));
     fetchItems(getSearchFields(data));
@@ -182,7 +162,7 @@ const useUsersPageService = () => {
   return {
     strings,
     showModalFilter,
-    toggleAddUserDropdown,
+    addUser,
     handleSubmit: form.handleSubmit,
     onSubmit,
     badge,

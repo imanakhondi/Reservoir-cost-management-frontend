@@ -68,6 +68,7 @@ export const userStatuses = {
 export const userTypes = {
   operator: "عادی (پیش‌فرض)",
   administrator: "مدیر",
+  internalManager: "مدیر داخلی",
   merchant: "تاجر",
   financial: "مالی",
 };

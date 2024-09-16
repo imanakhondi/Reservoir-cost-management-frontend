@@ -14,6 +14,7 @@ import {
 } from "../../../stores/layout/layoutActions";
 import { filterUsersSchema as schema } from "../validations";
 import { search, searchWithProps } from "../api/servicesApi";
+import { useNavigate } from "react-router-dom";
 
 const useServicesPageService = () => {
   const layoutState = useSelector((state) => state.layoutReducer);
@@ -26,6 +27,7 @@ const useServicesPageService = () => {
     count: 0,
   });
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const form = useForm({
     resolver: yupResolver(schema),
   });
@@ -46,25 +48,10 @@ const useServicesPageService = () => {
     }
   }, [pagination.pageNo, pagination.pageItems]);
 
-  const toggleAddServiceDropdown = (e) => {
+  const addService = (e) => {
     e.stopPropagation();
-    const element = document.querySelector("#add-user-menu").lastChild;
 
-    if (layoutState?.dropDownElement) {
-      slideUp(layoutState.dropDownElement);
-
-      if (layoutState?.dropDownElement === element) {
-        dispatch(setDropDownElementAction(null));
-
-        return;
-      }
-    }
-
-    dispatch(setDropDownElementAction(element));
-    slideDown(element, {
-      duration: 400,
-      easing: easeOutQuint,
-    });
+    return navigate("/services/add");
   };
 
   const showModalFilter = () => {
@@ -131,7 +118,7 @@ const useServicesPageService = () => {
   return {
     strings,
     showModalFilter,
-    toggleAddServiceDropdown,
+    addService,
     handleSubmit: form.handleSubmit,
     onSubmit,
     badge,

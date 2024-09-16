@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { ModalFilter, InputDatePicker, InputSelect, InputText } from "..";
 import utils from "../../utils";
-import { userStatuses, userTypes } from "../../types/options";
+import { userTypes } from "../../types/options";
 
 const ModalUsersFilter = ({ onSubmit }) => {
   const pageState = useSelector((state) => state.pageReducer);
@@ -20,7 +20,6 @@ const ModalUsersFilter = ({ onSubmit }) => {
         <InputText field="filterName" />
         <InputText field="filterUsername" />
         <InputText field="filterMobile" />
-        <InputSelect field="filterStatus" options={userStatuses} />
         <InputSelect field="filterType" options={userTypes} />
         <InputDatePicker field="filterCreatedAt" />
       </div>

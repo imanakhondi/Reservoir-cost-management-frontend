@@ -14,6 +14,7 @@ import {
 } from "../../../stores/layout/layoutActions";
 import { filterTanksSchema as schema } from "../validations";
 import { search, searchWithProps } from "../api/tanksApi";
+import { useNavigate } from "react-router-dom";
 
 const useTanksPageService = () => {
   const layoutState = useSelector((state) => state.layoutReducer);
@@ -26,6 +27,7 @@ const useTanksPageService = () => {
     count: 0,
   });
   const dispatch = useDispatch();
+  const navigate=useNavigate()
   const form = useForm({
     resolver: yupResolver(schema),
   });
@@ -46,25 +48,9 @@ const useTanksPageService = () => {
     }
   }, [pagination.pageNo, pagination.pageItems]);
 
-  const toggleAddTankDropdown = (e) => {
+  const addTank = (e) => {
     e.stopPropagation();
-    const element = document.querySelector("#add-user-menu").lastChild;
-
-    if (layoutState?.dropDownElement) {
-      slideUp(layoutState.dropDownElement);
-
-      if (layoutState?.dropDownElement === element) {
-        dispatch(setDropDownElementAction(null));
-
-        return;
-      }
-    }
-
-    dispatch(setDropDownElementAction(element));
-    slideDown(element, {
-      duration: 400,
-      easing: easeOutQuint,
-    });
+   navigate("/tanks/add")
   };
 
   const showModalFilter = () => {
@@ -142,7 +128,7 @@ const useTanksPageService = () => {
   return {
     strings,
     showModalFilter,
-    toggleAddTankDropdown,
+    addTank,
     handleSubmit: form.handleSubmit,
     onSubmit,
     badge,

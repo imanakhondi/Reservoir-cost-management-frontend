@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 
 import { TableEmptyItems, Loading } from "../";
 
-const TableItems = ({ items, renderHeader, renderItems, colSpan }) => {
+const TableItems = ({ items = [], renderHeader, renderItems, colSpan }) => {
   const layoutState = useSelector((state) => state.layoutReducer);
 
   return (

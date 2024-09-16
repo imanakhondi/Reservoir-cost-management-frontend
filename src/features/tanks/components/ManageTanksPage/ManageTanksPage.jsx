@@ -1,23 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import {
   AuthLayout,
   ButtonAdd,
   ButtonEditSm,
   ButtonFilter,
-  LabelSuccess,
-  LabelWarning,
   TableItems,
   ButtonViewSm,
-  InputSelectPagination,
   TablePagination,
   ModalTanksFilter,
 } from "../../../../components";
 import { useTanksPageService } from "../../hooks";
-import Svg, { SvgPath } from "../../../../components/svg";
 import utils from "../../../../utils";
-import { pageItems } from "../../../../types/options";
 
 const ManageTanksPage = () => {
   const service = useTanksPageService();
@@ -29,9 +23,9 @@ const ManageTanksPage = () => {
           {service.strings.id}
         </div>
       </th>
-      <th className="px-5 font-normal min-w-32">{service.strings.tankName}</th>
+      <th className="px-5 font-normal min-w-32">{service.strings.tankNo}</th>
       <th className="px-5 font-normal min-w-32">{service.strings.tankOwner}</th>
-      <th className="px-5 font-normal min-w-32">
+      <th className="px-5 font-normal min-w-48">
         {service.strings.oilTestExpiryDate}
       </th>
       <th className="px-5 font-normal min-w-32">
@@ -55,7 +49,7 @@ const ManageTanksPage = () => {
         <td className="px-5 font-medium min-h-14 w-12 flex flex-col justify-center">
           {utils.localeDigits(item.id)}
         </td>
-        <td className="px-5 font-medium">{item.tankName}</td>
+        <td className="px-5 font-medium">{item.tankNo}</td>
         <td className="px-5 font-medium">{item.tankOwner}</td>
         <td className="px-5 font-medium">{item.oilTestExpiryDate}</td>
         <td className="px-5 font-medium">{item.rahaneTestExpiryDate}</td>
@@ -85,31 +79,8 @@ const ManageTanksPage = () => {
             <div id="add-user-menu" className="relative cursor-pointer">
               <ButtonAdd
                 label={service.strings.btnAdd}
-                onClick={service.toggleAddTankDropdown}
+                onClick={service.addTank}
               />
-              <div className="absolute hidden cursor-default overflow-hidden right-0 top-11 dropdown-menu-header rounded">
-                <div className="bg-white px-4 py-1 border border-border-line rounded-t">
-                  <Link
-                    className="flex flex-row items-center gap-2"
-                    to={`/tanks/add`}
-                  >
-                    <Svg
-                      SvgPath={
-                        <SvgPath.SvgCirclePlus
-                          pathClassName={"stroke-subline"}
-                        />
-                      }
-                      width="24"
-                      height="24"
-                      className="icon-complex"
-                      viewBox={"0 0 16 16"}
-                    />
-                    <span className="text-subline w-max text-sm">
-                      {service.strings.addTankQuick}
-                    </span>
-                  </Link>
-                </div>
-              </div>
             </div>
             <ButtonFilter
               label={service.strings.btnFilter}
