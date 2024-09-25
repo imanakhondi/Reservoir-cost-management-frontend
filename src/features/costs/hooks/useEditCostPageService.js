@@ -96,6 +96,7 @@ const useEditCostPageService = () => {
           tankOwner: costData.tankOwner,
           tankNo: costData.tankNo,
           serviceType: costData.serviceType,
+          approximateCost: costData.approximateCost,
           costDescription: costData.costDescription,
         });
         setSelectedTankOwner(costData.tankOwner);

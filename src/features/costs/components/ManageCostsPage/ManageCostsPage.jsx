@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   AuthLayout,
@@ -12,9 +12,12 @@ import {
 import { useCostsPageService } from "../../hooks";
 import utils from "../../../../utils";
 import ModalCostsFilter from "../../../../components/modal/ModalCostsFilter";
+import ModalChangeStaus from "../../../../components/modal/ModalChangeStaus";
+import ChangeCostStatus from "../ChangeCostStatus/ChangeCostStatus";
 
 const ManageCostsPage = () => {
   const service = useCostsPageService();
+  const [isChangeStatusCost, setIsChangeStatusCost] = useState(false);
 
   const renderHeader = () => (
     <tr className="text-xs text-right text-deactive border-b border-table-border">
@@ -30,13 +33,12 @@ const ManageCostsPage = () => {
       </th>
       <th className="px-5 font-normal min-w-32">{service.strings.cost}</th>
       <th className="px-5 font-normal min-w-32">{service.strings.costDate}</th>
-
-      {/* <th className="px-5 font-normal w-full">{service.strings.status}</th> */}
       <th className="px-5 font-normal min-w-40">تائید / رد توسط تاجر</th>
+      <th className="px-5 font-normal w-full">{service.strings.status}</th>
       <th className="px-5 min-w-12">&nbsp;</th>
     </tr>
   );
-
+  service.data.items = [{ id: 1 }];
   const renderItems = () =>
     service.data?.items &&
     service.data.items.map((item, index) => (
@@ -52,14 +54,27 @@ const ManageCostsPage = () => {
         <td className="px-5 font-medium">{item.serviceType}</td>
         <td className="px-5 font-medium">{item?.cost || "-"}</td>
         <td className="px-5 font-medium">{item?.costDate || "-"}</td>
+        <td className="px-5 font-medium"></td>
         <td className="px-5 font-medium">
           {/* {item.isBanned && <LabelWarning label={userStatuses.deactive} />}
           {!item.isBanned && <LabelSuccess label={userStatuses.active} />} */}
           empty...
         </td>
         <td className="px-5 font-normal flex-1 flex flex-row gap-2 justify-end">
-          <ButtonEditSm />
-          <ButtonViewSm />
+          <ButtonEditSm
+            onClick={() => service.navigate(`/costs/edit/${item.id}`)}
+          />
+          <ButtonViewSm onClick={() => setIsChangeStatusCost(true)} />
+          <ModalChangeStaus
+            title="تغییر وضعیت"
+            open={isChangeStatusCost}
+            onClose={() => setIsChangeStatusCost(false)}
+          >
+            <ChangeCostStatus
+              costId={item.id}
+              onClose={() => setIsChangeStatusCost(false)}
+            />
+          </ModalChangeStaus>
         </td>
       </tr>
     ));

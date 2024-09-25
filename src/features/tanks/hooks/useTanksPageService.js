@@ -136,6 +136,7 @@ const useTanksPageService = () => {
     pagination,
     setPagination,
     onChangePageItems,
+    navigate
   };
 };
 

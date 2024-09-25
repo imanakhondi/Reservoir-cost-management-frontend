@@ -35,7 +35,7 @@ const ManageTanksPage = () => {
         {service.strings.capotageExpiryDate}
       </th>
       <th className="px-5 font-normal min-w-32">{service.strings.status}</th>
-      <th className="px-5 min-w-12">&nbsp;</th>
+      <th className="px-5 min-w-12">&nbsp; </th>
     </tr>
   );
 
@@ -60,7 +60,7 @@ const ManageTanksPage = () => {
           empty...
         </td>
         <td className="px-5 font-normal flex-1 flex flex-row gap-2 justify-end">
-          <ButtonEditSm />
+          <ButtonEditSm onClick={()=>service.navigate(`/tanks/edit/${item.id}`)}/>
           <ButtonViewSm />
         </td>
       </tr>

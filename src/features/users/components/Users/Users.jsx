@@ -56,7 +56,7 @@ const Users = () => {
           {!item.isBanned && <LabelSuccess label={userStatuses.active} />}
         </td>
         <td className="px-5 font-normal flex-1 flex flex-row gap-2 justify-end">
-          <ButtonEditSm />
+          <ButtonEditSm onClick={()=>service.navigate(`/users/edit/${item.id}`)}/>
           <ButtonViewSm />
         </td>
       </tr>

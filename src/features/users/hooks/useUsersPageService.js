@@ -170,6 +170,7 @@ const useUsersPageService = () => {
     pagination,
     setPagination,
     onChangePageItems,
+    navigate
   };
 };
 

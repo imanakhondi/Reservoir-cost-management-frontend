@@ -94,6 +94,7 @@ const AddCost = () => {
             />
             <InputSelect field="tankNo" options={tankNoList} required />
             <InputSelect field="serviceType" options={costType} required />
+            <InputText field="approximateCost" type="number" required />
           </div>
 
           <h2 className="text-primary font-bold mt-6">

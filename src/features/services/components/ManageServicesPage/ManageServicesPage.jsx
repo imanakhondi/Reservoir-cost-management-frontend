@@ -43,7 +43,7 @@ const ManageServicesPage = () => {
         </td>
         <td className="px-5 font-medium">{item.serviceName}</td>
         <td className="px-5 font-normal flex-1 flex flex-row gap-2 justify-end">
-          <ButtonEditSm />
+          <ButtonEditSm onClick={()=>service.navigate(`/services/edit/${item.id}`)} />
           <ButtonViewSm />
         </td>
       </tr>

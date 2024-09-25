@@ -126,6 +126,7 @@ const useServicesPageService = () => {
     pagination,
     setPagination,
     onChangePageItems,
+    navigate
   };
 };
 

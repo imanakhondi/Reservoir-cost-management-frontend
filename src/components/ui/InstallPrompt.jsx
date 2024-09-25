@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
+import toast from "react-hot-toast";
 
 const InstallPrompt = () => {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -39,9 +40,9 @@ const InstallPrompt = () => {
       deferredPrompt.prompt();
       deferredPrompt.userChoice.then((choiceResult) => {
         if (choiceResult.outcome === "accepted") {
-          console.log("User accepted the A2HS prompt");
+          toast.success("اپلیکیشن با موفقیت نصب شد!");
         } else {
-          console.log("User dismissed the A2HS prompt");
+          toast.error("نصب اپلیکیشن لغو شد.");
         }
         setDeferredPrompt(null);
         setIsVisible(false);

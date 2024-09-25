@@ -5,6 +5,7 @@ export const add = async (
   tankOwner,
   tankNo,
   serviceType,
+  approximateCost,
   costDescription,
   uploadDoc
 ) => {
@@ -13,6 +14,7 @@ export const add = async (
   formData.append("tankOwner", tankOwner);
   formData.append("tankNo", tankNo);
   formData.append("serviceType", serviceType);
+  formData.append("approximateCost", approximateCost);
   formData.append("costDescription", costDescription);
 
   if (uploadDoc) {
@@ -27,6 +29,7 @@ export const edit = async (
   tankOwner,
   tankNo,
   serviceType,
+  approximateCost,
   costDescription,
   uploadDoc
 ) => {
@@ -35,6 +38,7 @@ export const edit = async (
   formData.append("tankOwner", tankOwner);
   formData.append("tankNo", tankNo);
   formData.append("serviceType", serviceType);
+  formData.append("approximateCost", approximateCost);
   formData.append("costDescription", costDescription);
 
   if (uploadDoc) {
@@ -49,6 +53,7 @@ export const update = async (
   tankOwner,
   tankNo,
   serviceType,
+  approximateCost,
   costDescription,
   cost,
   costDate,
@@ -59,6 +64,7 @@ export const update = async (
   formData.append("tankOwner", tankOwner);
   formData.append("tankNo", tankNo);
   formData.append("serviceType", serviceType);
+  formData.append("approximateCost", approximateCost);
   formData.append("costDescription", costDescription);
   formData.append("cost", cost);
   formData.append("costDate", costDate);

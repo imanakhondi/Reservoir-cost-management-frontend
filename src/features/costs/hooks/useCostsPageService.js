@@ -133,6 +133,7 @@ const useCostsPageService = () => {
     pagination,
     setPagination,
     onChangePageItems,
+    navigate
   };
 };
 

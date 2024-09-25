@@ -31,6 +31,7 @@ const useUpdateCostPageService = () => {
         data.tankOwner,
         data.tankNo,
         data.serviceType,
+        data.approximateCost,
         data.costDescription,
         data.uploadDoc,
         data.cost,

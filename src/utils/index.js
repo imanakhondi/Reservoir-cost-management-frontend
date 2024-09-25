@@ -9,6 +9,7 @@ import {
   setMessageAction,
 } from "../stores/message/messageActions";
 import { MESSAGE_TYPES } from "../types/messageTypes";
+import { getToken, messaging } from "../firebase.js";
 
 const isJsonString = (str) => {
   try {
@@ -217,6 +218,37 @@ const getExtension = (filename) => {
   return /[.]/.exec(filename) ? /[^.]+$/.exec(filename) : undefined;
 };
 
+export const requestFCMPermissionAndToken = async (setCurrentToken) => {
+  try {
+    const permission = await Notification.requestPermission();
+    if (permission === "granted") {
+      await getFCMToken(setCurrentToken);
+    } else {
+      console.log("Permission to notify was denied.");
+    }
+  } catch (error) {
+    console.error("Error during permission request:", error);
+  }
+};
+
+const getFCMToken = async (setCurrentToken) => {
+  try {
+    const token = await getToken(messaging, {
+      vapidKey:
+        "BBV9hpaiaxnDWzA_7GO5jlWYqn0wNrZUp-npzoOGTK2_VnMbITJBYoayuIiWe99azQ5Uehy-S7fPqVqaCMmJ4UU",
+    });
+
+    if (token) {
+      setCurrentToken(token);
+      console.log("FCM Token:", token);
+    } else {
+      console.log("No registration token available.");
+    }
+  } catch (error) {
+    console.error("Error retrieving FCM token:", error);
+  }
+};
+
 const utils = {
   isJsonString,
   initLocale,
@@ -232,6 +264,7 @@ const utils = {
   fa2enDigits,
   localeDigits,
   getExtension,
+  requestFCMPermissionAndToken,
 };
 
 export default utils;
